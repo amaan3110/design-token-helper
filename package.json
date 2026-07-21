@@ -1,0 +1,106 @@
+{
+  "name": "design-token-helper",
+  "displayName": "Design Token Helper",
+  "publisher": "Amaan",
+  "description": "Convert CSS values into Design Tokens",
+  "version": "0.0.3",
+  "icon": "images/vs_code_extension_icon.png",
+  "engines": {
+    "vscode": "^1.125.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onLanguage:css",
+    "onLanguage:scss",
+    "onLanguage:less"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Design Token Settings",
+      "properties": {
+        "designTokenSetting.tokenFile": {
+          "type": "string",
+          "default": "token.css",
+          "description": "Path or filename of the design token CSS file. Leave empty to search for token.css."
+        },
+        "designTokenSetting.replaceOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically replace matching values with CSS variables when the file is saved."
+        },
+        "designTokenSetting.replaceOnType": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically replace matching values immediately after typing ';'."
+        },
+        "designTokenSetting.confirmReplacement": {
+          "type": "boolean",
+          "default": false,
+          "description": "Ask for confirmation before replacing a CSS value with a design token."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "design-token-setting.selectTokenFile",
+        "title": "Design Token Setting: Select Token File"
+      },
+      {
+        "command": "design-token-setting.restartExtension",
+        "title": "Design Token Helper: Restart Extension"
+      },
+      {
+        "command": "design-token-setting.convertCurrentFile",
+        "title": "Convert Current File to Design Tokens"
+      },
+      {
+        "command": "design-token-setting.reloadTokens",
+        "title": "Design Token Helper: Reload Tokens"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "design-token-setting.convertCurrentFile",
+          "when": "editorLangId == css || editorLangId == scss || editorLangId == less",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "@types/vscode": "^1.125.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0",
+    "eslint": "^10.5.0",
+    "ts-loader": "^9.6.2",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1",
+    "webpack": "^5.107.2",
+    "webpack-cli": "^7.0.3"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  },
+  "dependencies": {
+    "postcss": "^8.5.20"
+  }
+}
