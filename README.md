@@ -285,11 +285,11 @@ Ask for confirmation before replacing a value.
 
 ## 📋 Release History
 
-| Version | Release Date | Download                                                                                                 | Status    |
-| ------- | ------------ | -------------------------------------------------------------------------------------------------------- | --------- |
-| v0.0.3  | 21 July 2026 | [Download VSIX](https://github.com/amaan3110/design-token-helper/release/design-token-helper-0.0.3.vsix) | ✅ Latest |
-| v0.0.2  | 21 July 2026 | [Download VSIX](https://github.com/amaan3110/design-token-helper/release/design-token-helper-0.0.2.vsix) | ✅ Latest |
-| v0.0.1  | 18 July 2026 | [Download VSIX](https://github.com/amaan3110/design-token-helper/release/design-token-helper-0.0.1.vsix) | Archived  |
+| Version | Release Date | Download                                                                                                                     | Status    |
+| ------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------- | --------- |
+| v0.0.3  | 21 July 2026 | [Download VSIX](https://raw.githubusercontent.com/amaan3110/design-token-helper/main/release/design-token-helper-0.0.3.vsix) | ✅ Latest |
+| v0.0.2  | 21 July 2026 | [Download VSIX](https://raw.githubusercontent.com/amaan3110/design-token-helper/main/release/design-token-helper-0.0.2.vsix) | ✅ Latest |
+| v0.0.1  | 18 July 2026 | [Download VSIX](https://raw.githubusercontent.com/amaan3110/design-token-helper/main/release/design-token-helper-0.0.1.vsix) | Archived  |
 
 ---
 
